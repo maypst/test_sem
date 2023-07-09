@@ -58,5 +58,6 @@ public class App
                 System.out.println("Error closing connection to database");
             }
         }
+
     }
 }
