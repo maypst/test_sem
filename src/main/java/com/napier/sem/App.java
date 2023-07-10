@@ -110,6 +110,10 @@ private Connection con = null;
                 emp.emp_no = rset.getInt("emp_no");
                 emp.first_name = rset.getString("first_name");
                 emp.last_name = rset.getString("last_name");
+                emp.salary = rset.getInt("salary");
+                emp.title = rset.getString("title");
+                emp.dept_name = rset.getString("dept_name");
+                emp.manager = rset.getString("manager");
                 return emp;
             }
             else
