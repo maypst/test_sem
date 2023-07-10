@@ -10,16 +10,18 @@ public class App
     {
         // Create new Application
         App a = new App();
+        // Create new employee object
         Employee e = new Employee();
         // Connect to database
         a.connect();
 
         // Extract employee salary information
         ArrayList<Employee> employees = e.getAllSalaries(a.con);
+        ArrayList<Employee> print_employees = e.printSalaries(ArrayList<Employee>);
 
         // Get Employee
         //Employee emp = a.getEmployee(255530);
-        // Display results
+        //Display results
         //a.displayEmployee(emp);
 
         // Disconnect from database
