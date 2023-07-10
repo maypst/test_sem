@@ -1,20 +1,26 @@
 package com.napier.sem;
 
 import java.sql.*;
+import java.util.*;
 
 public class App
 {
+    private Connection con = null;
     public static void main(String[] args)
     {
         // Create new Application
         App a = new App();
-
+        Employee e = new Employee();
         // Connect to database
         a.connect();
+
+        // Extract employee salary information
+        ArrayList<Employee> employees = e.getAllSalaries(a.con);
+
         // Get Employee
-        Employee emp = a.getEmployee(255530);
+        //Employee emp = a.getEmployee(255530);
         // Display results
-        a.displayEmployee(emp);
+        //a.displayEmployee(emp);
 
         // Disconnect from database
         a.disconnect();
@@ -22,7 +28,7 @@ public class App
     /**
  * Connection to MySQL database.
  */
-private Connection con = null;
+
 
     /**
      * Connect to the MySQL database.
