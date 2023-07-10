@@ -113,7 +113,7 @@ private Connection con = null;
                 emp.salary = rset.getInt("salary");
                 emp.title = rset.getString("title");
                 emp.dept_name = rset.getString("dept_name");
-                emp.manager = rset.getString("manager");
+                //emp.manager = rset.getString("manager");
                 return emp;
             }
             else
@@ -137,8 +137,8 @@ private Connection con = null;
                             + emp.last_name + "\n"
                             + emp.title + "\n"
                             + "Salary:" + emp.salary + "\n"
-                            + emp.dept_name + "\n"
-                            + "Manager: " + emp.manager + "\n");
+                            + emp.dept_name + "\n");
+                            //+ "Manager: " + emp.manager + "\n");
         }
     }
 }
