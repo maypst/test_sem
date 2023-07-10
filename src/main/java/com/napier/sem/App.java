@@ -91,6 +91,7 @@ private Connection con = null;
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
+            int i = 9999 - 01 - 01;
             String strSelect =
                     "SELECT dept_manager.emp_no as manager_emp_id, employees.first_name, employees.last_name, titles.title, salaries.salary, departments.dept_name, titles.from_date, titles.to_date FROM dept_emp"
                             + "INNER JOIN employees ON employees.emp_no = dept_emp.emp_no"
@@ -98,7 +99,7 @@ private Connection con = null;
                             + "INNER JOIN salaries ON employees.emp_no = salaries.emp_no"
                             + "INNER JOIN titles ON employees.emp_no = titles.emp_no"
                             + " INNER JOIN dept_manager ON employees.emp_no = dept_manager.emp_no"
-                            + "WHERE titles.to_date = '9999-01-01' "
+                            + "WHERE titles.to_date = " + i
                             + "ORDER BY titles.from_date DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
