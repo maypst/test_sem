@@ -97,7 +97,7 @@ private Connection con = null;
                             + "INNER JOIN departments ON dept_emp.dept_no = departments.dept_no"
                             + "INNER JOIN salaries ON employees.emp_no = salaries.emp_no"
                             + "INNER JOIN titles ON employees.emp_no = titles.emp_no"
-                            + " INNER JOIN dept_manager ON employees.emp_no = dept_manager.emp_no"
+                            + "INNER JOIN dept_manager ON employees.emp_no = dept_manager.emp_no"
                             + "WHERE titles.to_date = '9999 - 01 - 01'"
                             + "ORDER BY titles.from_date DESC";
             // Execute SQL statement
