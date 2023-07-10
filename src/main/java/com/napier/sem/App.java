@@ -92,7 +92,7 @@ private Connection con = null;
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT dept_manager.emp_no as manager_emp_id, employees.first_name, employees.last_name, titles.title, salaries.salary, departments.dept_name, titles.from_date, titles.to_date FROM dept_emp "
+                    "SELECT employees.emp_no, dept_manager.emp_no as manager_emp_id, employees.first_name, employees.last_name, titles.title, salaries.salary, departments.dept_name, titles.from_date, titles.to_date FROM dept_emp "
                             + "INNER JOIN employees ON employees.emp_no = dept_emp.emp_no "
                             + "INNER JOIN departments ON dept_emp.dept_no = departments.dept_no "
                             + "INNER JOIN salaries ON employees.emp_no = salaries.emp_no "
