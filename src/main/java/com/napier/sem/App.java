@@ -17,7 +17,7 @@ public class App
 
         // Extract employee salary information
         ArrayList<Employee> employees = e.getAllSalaries(a.con);
-        ArrayList<Employee> print_employees = e.printSalaries(ArrayList<Employee>);
+        e.printSalaries(employees);
 
         // Get Employee
         //Employee emp = a.getEmployee(255530);
