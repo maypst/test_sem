@@ -19,7 +19,7 @@ jobs:
           java-version: '16'
           distribution: 'adopt'
       - name: Unit Tests
-        run: mvn -Dtest=com.napier.sem.AppTest test
+        run: mvn -Dtest=com.napier.sem.MyTest test
 
   IntegrationTests:
     name: Integration Tests
@@ -38,7 +38,7 @@ jobs:
         run: |
           docker build -t database ./db 
           docker run --name employees -dp 33060:3306 database
-          mvn -Dtest=com.napier.sem.AppIntegrationTest test
+          mvn -Dtest=com.napier.sem.AppIntegratedTest test
           docker stop employees
           docker rm employees
           docker image rm database                    
