@@ -45,7 +45,7 @@ jobs:
       - name: CodeCov
         uses: codecov/codecov-action@v2
         env:
-          CODECOV_TOKEN: 3f05cd8e-9f03-4fea-8dd8-40a2b8151086
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
           # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           directory: ./target/site/jacoco
