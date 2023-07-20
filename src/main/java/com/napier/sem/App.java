@@ -13,11 +13,8 @@ public class App
         // Create new employee object
         Employee e = new Employee();
         // Connect to database
-        if(args.length < 1){
-            a.connect("localhost:33060", 30000);
-        }else {
-            a.connect(args[0], Integer.parseInt(args[1]));
-        }
+        a.connect();
+
         // Extract employee salary information
         ArrayList<Employee> employees = e.getAllSalaries(a.con);
         e.printSalaries(employees);
@@ -38,7 +35,7 @@ public class App
     /**
      * Connect to the MySQL database.
      */
-    public void connect(String location, int delay) {
+    public void connect( ) {
         try {
             // Load Database driver
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -52,7 +49,7 @@ public class App
             System.out.println("Connecting to database...");
             try {
                 // Wait a bit for db to start
-                Thread.sleep(delay);
+                Thread.sleep(30000);
                 // Connect to database
                 //con = DriverManager.getConnection("jdbc:mysql://" + location
                 //                + "/employees?allowPublicKeyRetrieval=true&useSSL=false",
