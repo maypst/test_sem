@@ -13,6 +13,8 @@ jobs:
           submodules: recursive
       - name: Set up JDK 16
         uses: actions/setup-java@v2
+        env:
+          CODECOV_TOKEN: 3f05cd8e-9f03-4fea-8dd8-40a2b8151086
         with:
           java-version: '16'
           distribution: 'adopt'
