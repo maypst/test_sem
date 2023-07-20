@@ -28,10 +28,10 @@ public class App
         // Test the size of the returned data - should be 240124
         System.out.println(employees.size());
         // Get Employee
-        //Employee emp = a.getEmployee(255530);
+        Employee emp = a.getEmployee("Bezalel");
 
         // Display results
-        //a.displayEmployee(emp);
+        a.displayEmployee(emp);
 
         // Disconnect from database
         a.disconnect();
@@ -55,16 +55,16 @@ public class App
             System.exit(-1);
         }
 
-        int retries = 10;
+        int retries = 3;
         for (int i = 0; i < retries; ++i) {
             System.out.println("Connecting to database...");
             try {
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/employees?useSSL=false", "root", "example");
+                //con = DriverManager.getConnection("jdbc:mysql://db:3306/employees?useSSL=false", "root", "example");
                 // Connect to database in localhost
-                // con = DriverManager.getConnection("jdbc:mysql://localhost:33061/world", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:33061/employees", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             } catch (SQLException sqle) {
@@ -94,7 +94,7 @@ public class App
         }
     }
 
-    public Employee getEmployee(int ID)
+    public Employee getEmployee(String first_name)
     {
         try
         {
@@ -111,8 +111,7 @@ public class App
                             "JOIN salaries ON salaries.emp_no = employees.emp_no "+
                             "JOIN titles ON titles.emp_no = employees.emp_no "+
                             "JOIN dept_manager ON dept_manager.emp_no = employees.emp_no "+
-                            "WHERE titles.to_date = '9999-01-01' "+
-                            "ORDER BY titles.from_date DESC limit ";
+                            "WHERE employees.first_name = " + first_name;
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new employee if valid.

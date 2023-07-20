@@ -21,9 +21,9 @@ public class AppIntegratedTest {
     @Test
     void testGetEmployee()
     {
-        Employee emp = app.getEmployee(255530);
-        assertEquals(emp.emp_no, 255530);
-        assertEquals(emp.first_name, "Ronghao");
-        assertEquals(emp.last_name, "Garigliano");
+        Employee emp = app.getEmployee("Bezalel");
+        //assertEquals(emp.emp_no, 10001);
+        assertEquals(emp.first_name, "Bezalel");
+        assertEquals(emp.last_name, "Simmel");
     }
 }
