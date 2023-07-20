@@ -13,11 +13,11 @@ public class App
         // Create new employee object
         Employee e = new Employee();
         // Connect to database
-        if(args.length < 1){
-            a.connect("localhost:33060", 30000);
-        }else{
-            a.connect(args[0], Integer.parseInt(args[1]));
-        }
+//        if(args.length < 1){
+//            a.connect("localhost:33060", 30000);
+//        }else{
+//            a.connect(args[0], Integer.parseInt(args[1]));
+//        }
 
         // Extract employee salary information
         ArrayList<Employee> employees = e.getAllSalaries(a.con);
